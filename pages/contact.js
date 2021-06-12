@@ -1,8 +1,6 @@
-import React from 'react'
-import Link from 'next/link'
 import Layout from '../components/layout'
 
-const Index = () => {
+const Contact = () => {
   return (
     <Layout>
       <h1>UNDER CONSTRUCTION</h1>
@@ -10,4 +8,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default Contact

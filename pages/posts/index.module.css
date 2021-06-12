@@ -1,0 +1,71 @@
+.posts_wrapper {
+  --border-standard: 1px solid #f7f7f7;
+}
+
+.posts_wrapper li {
+  list-style: none;
+  position: relative;
+  transition: background 100ms ease-in;
+}
+
+.posts_wrapper li:not(:last-child):after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 0.5px;
+  background: rgba(69, 162, 158, 0.25);
+  bottom: 5px;
+  left: 10px;
+}
+
+.posts_wrapper li:hover {
+  background: #c5c6c7;
+  color: #333;
+}
+
+.posts_wrapper li:hover:not(:last-child):after {
+  width: 0;
+  height: 0;
+}
+
+.posts_wrapper li:hover .date {
+  color: #333;
+}
+
+.posts_wrapper h1 {
+  border: var(--border-standard);
+  padding: 1rem;
+  text-align: center;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.post_list {
+  border-right: var(--border-standard);
+  border-bottom: var(--border-standard);
+  border-left: var(--border-standard);
+}
+
+.post_list a {
+  display: block;
+  padding: 2rem 1rem;
+}
+
+.title {
+  margin-bottom: 5px;
+  font-size: 1.75rem;
+}
+
+.date {
+  font-size: 1rem;
+  font-style: italic;
+  letter-spacing: 2px;
+  color: #c5c6c7;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-weight: 300;
+  font-size: 1.2rem;
+}
