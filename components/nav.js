@@ -24,6 +24,9 @@ const Nav = () => {
             </li>
           </ul>
         </nav>
+        <div className={styles.burger_wrapper}>
+          <div className={styles.burger}></div>
+        </div>
       </div>
     </header>
   )
