@@ -1,9 +1,31 @@
+import React, { useState } from 'react'
 import Link from 'next/link'
 import styles from './nav.module.css'
+import getHTML from '../utilities/getHTML'
 
-const Nav = () => {
+const Nav = props => {
+  const [active, setActive] = useState(false)
+  const handleToggle = event => {
+    let html = getHTML(event.target)
+    // get target classList and convert to array
+    const classList = Array.from(event.target.classList)
+    // check if target is hamburger
+    if (classList[0]?.startsWith('nav_burger')) {
+      setActive(!active)
+      html.classList.toggle('pause')
+    }
+
+    if (event.target.tagName === 'A') {
+      setActive(!active)
+      html.classList.toggle('pause')
+    }
+  }
+
   return (
-    <header className={styles.nav_header}>
+    <header
+      className={`${styles.nav_header} ${active ? styles.active : ''}`}
+      onClick={handleToggle}
+    >
       <div>
         <nav>
           <ul>

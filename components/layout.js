@@ -1,19 +1,8 @@
-import React, { useState } from 'react'
 import Head from 'next/head'
 import Nav from '../components/nav'
 import styles from './layout.module.css'
 
 const Layout = ({ children }) => {
-  const [active, setActive] = useState(false)
-  const handleToggle = event => {
-    // get target classList and convert to array
-    const classList = Array.from(event.target.classList)
-    // check if target is hamburger
-    if (classList[0]?.startsWith('nav_burger')) {
-      setActive(!active)
-    }
-  }
-
   return (
     <>
       <Head>
@@ -27,7 +16,7 @@ const Layout = ({ children }) => {
         />
         <title>My Blog</title>
       </Head>
-      <Nav onToggle={handleToggle} />
+      <Nav />
       <main className={styles.main_container}>{children}</main>
     </>
   )
