@@ -15,7 +15,7 @@ const Nav = props => {
       html.classList.toggle('pause')
     }
 
-    if (event.target.tagName === 'A') {
+    if (event.target.tagName === 'A' && active) {
       setActive(!active)
       html.classList.toggle('pause')
     }
