@@ -1,0 +1,16 @@
+.header {
+  text-align: center;
+  background: #1f2833;
+  color: #c5c6c7;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  font-weight: 300;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  border-bottom: 1px solid #f7f7f7;
+  z-index: 1;
+  padding: 0 1rem;
+}

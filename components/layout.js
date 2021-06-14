@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Nav from '../components/nav'
+import Header from '../components/header'
 import styles from './layout.module.css'
 
 const Layout = ({ children }) => {
@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
         />
         <title>My Blog</title>
       </Head>
-      <Nav />
+      <Header />
       <main className={styles.main_container}>{children}</main>
     </>
   )
