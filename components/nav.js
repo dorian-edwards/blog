@@ -3,7 +3,7 @@ import styles from './nav.module.css'
 
 const Nav = props => {
   return (
-    <nav className={`${styles.navbar} ${styles[props.style]}`}>
+    <nav className={`${styles.navbar} ${styles[props.style]}`} onClick={props.handleLink}>
       <ul>
         <li>
           <Link href='/'>
