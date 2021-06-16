@@ -22,11 +22,10 @@ export default async function handler(req, res) {
     let info = await transporter.sendMail({
       from: `${name} <${email}>`, // sender address
       to: 'dorian.m.edwards@gmail.com', // list of receivers
-      subject: 'From Your Portfolio', // Subject line
+      subject: `A Message from ${email}`, // Subject line
       text: message, // plain text body
       html: `<b>${message}</b>`, // html body
     })
-    // throw new Error('broke fam')
     res.status(200).send(info)
   } catch (err) {
     res.status(500).json({ message: err.message })
