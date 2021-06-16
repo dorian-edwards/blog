@@ -47,11 +47,13 @@
 }
 
 .contact-info input:focus {
-  outline: 1px solid rgba(69, 162, 158, 0.25);
+  outline: none;
+  border: 1px solid rgba(69, 162, 158, 0.25);
 }
 
 .contact-info textarea:focus {
-  outline: 1px solid #45a29e;
+  outline: none;
+  border: 1px solid rgba(69, 162, 158, 0.25);
 }
 
 .contact-info input:focus + label,
