@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import styles from './header.module.css'
-import getHTML from '../utilities/getHTML'
 import Nav from './nav'
 import Burger from './burger'
 
