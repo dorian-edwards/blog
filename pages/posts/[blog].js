@@ -42,7 +42,7 @@ const Blog = ({ data, content }) => {
           <hr />
         </div>
         <div className={styles.blog_body}>
-          <ReactMarkdown children={content} components={components} />
+          <ReactMarkdown children={content} components={components} linkTarget='_blank' />
         </div>
       </div>
     </Layout>

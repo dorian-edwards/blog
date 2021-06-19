@@ -1,6 +1,10 @@
 .blog_wrapper > * {
   line-height: 1.5;
 }
+
+.blog_wrapper a {
+  color: rgb(102, 252, 241);
+}
 .blog_wrapper h1 {
   margin-bottom: 5px;
 }
@@ -17,9 +21,13 @@
 .blog_wrapper h6 {
   margin: 20px 0;
   position: relative;
+  display: inline-block;
+  border-left: 4px dotted rgba(102, 252, 241, 0.25);
+  border-bottom: 4px dotted rgba(102, 252, 241, 0.25);
+  padding-left: 4px;
 }
 
-.blog_body h1:before,
+/* .blog_body h1:before,
 .blog_wrapper h2:before,
 .blog_wrapper h3:before,
 .blog_wrapper h4:before,
@@ -32,7 +40,7 @@
   background: rgba(102, 252, 241, 0.25);
   left: -8px;
   bottom: 20%;
-}
+} */
 
 .blog_heading {
   margin-bottom: 7.5px;
@@ -43,7 +51,7 @@
   margin: 10px 0 15px 0;
   font-size: 1.5rem;
   font-weight: 300;
-  color: #c5c6c7;
+  color: #d6d7d8;
   letter-spacing: 2px;
 }
 
