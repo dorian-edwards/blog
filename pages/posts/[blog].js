@@ -25,7 +25,9 @@ const components = {
         {...props}
       />
     ) : (
-      <code className={className} {...props} />
+      <code className={styles.inline} {...props}>
+        {children}
+      </code>
     )
   },
 }

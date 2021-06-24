@@ -39,6 +39,7 @@
 
 .blog_wrapper pre {
   margin-bottom: 30px;
+  /* max-width: 95%; */
 }
 
 .blog_wrapper pre div {
@@ -48,4 +49,20 @@
 .time {
   color: #c5c6c7;
   margin-bottom: 10px;
+}
+
+.blog_body img[alt='folder-structure'] {
+  display: block;
+  width: 300px;
+  margin: auto;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+
+.inline {
+  background: #2f333a;
+  color: #fff;
+  font-size: 1.15rem;
+  padding: 0.2em 0.4em;
+  border-radius: 5px;
 }
