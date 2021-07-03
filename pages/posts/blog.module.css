@@ -66,3 +66,25 @@
   padding: 0.2em 0.4em;
   border-radius: 5px;
 }
+
+.blog_body table {
+  width: 95%;
+  margin: auto;
+  font-size: 1.2em;
+  font-weight: 300;
+  /* border: 1px solid white; */
+}
+
+.blog_body thead tr {
+  border-bottom: 1px solid white;
+}
+.blog_body th {
+  padding: 0.5rem;
+  border: 0.25px solid #c5c6c7;
+  border-bottom: none;
+}
+
+.blog_body td {
+  border: 0.25px solid #c5c6c7;
+  padding: 0.5rem;
+}

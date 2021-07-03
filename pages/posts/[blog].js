@@ -8,6 +8,7 @@ import bash from 'react-syntax-highlighter/dist/cjs/languages/prism/bash'
 import vsDarkPlus from 'react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus'
 import Layout from '../../components/layout'
 import styles from './blog.module.css'
+import gfm from 'remark-gfm'
 
 SyntaxHighlighter.registerLanguage('javascript', javascript)
 SyntaxHighlighter.registerLanguage('jsx', jsx)
@@ -44,7 +45,12 @@ const Blog = ({ data, content }) => {
           <hr />
         </div>
         <div className={styles.blog_body}>
-          <ReactMarkdown children={content} components={components} linkTarget='_blank' />
+          <ReactMarkdown
+            children={content}
+            components={components}
+            remarkPlugins={[gfm]}
+            linkTarget='_blank'
+          />
         </div>
       </div>
     </Layout>
