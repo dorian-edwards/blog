@@ -8,6 +8,7 @@ const Layout = ({ children }) => {
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta charSet='UTF-8' />
+        <meta name='author' content='dorian edwards'/>
         <meta name='description' content='A website about me and journey to tech...' />
         <meta property="og:image" content="/assets/images/bmore.png" />
         <meta property="og:image:alt" content="My personal website built with NextJS!" />
