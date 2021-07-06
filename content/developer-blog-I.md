@@ -9,21 +9,21 @@ date: '2021-06-28'
 
 In my journey to put together a portfolio to show off my work I am going to start by building a simple blog site that will allow users to log in, create posts, view other authors' posts, and edit or delete their own profile and posts. User actions will be restricted to their own post and we will be using Javascript Web Tokens for authentication and authorization. We will also be using MongoDB to store our data and we will be using Node/Express to provide CRUD functionality via RESTful routing.
 
-On the front-end we'll be using React and CSS modules to style our components. I'm also going to use conditional rendering to deal with most of the heavy lifting for reponsive design. I'm not a desginer so figure my janky styling. I try to aim for minimalism 👨🏿‍💻.
+On the front-end we'll be using React and CSS modules to style our components. I'm also going to use conditional rendering to deal with most of the heavy lifting for reponsive design. I'm not a desginer so forgive my janky styling. I try to aim for minimalism 👨🏿‍💻.
 
 ## Project Setup
 
-Since this will be a fullstack app using React on the frontend I'm going to begin by creating a react app using the following command
+Since this will be a fullstack app using React on the frontend I'm going to begin by creating a React app using the following command
 
 ```bash
 npx create-react-app devdiaries
 ```
 
-After this in done installing I cd into the directory and start removing superfluous folders, files and the code in the remaining files that refer to them. In the end my folder looks like the screenshot below.
+After this is done installing I cd into the directory and start removing superfluous folders, files and the code in the remaining files that refer to them. In the end my folder looks like the screenshot below.
 
 ![folder-structure](/assets/images/folder.png)
 
-After I have react installed, I'll set up the backend. To start I'll install [`express`](https://www.npmjs.com/package/express), create a folder called **_backend_** and create a file inside called `server.js`. I'll also be installing a program called [`nodemon`](https://www.npmjs.com/package/nodemon) so that while testing my backend I don't have to restart the server on every change.
+After I have React installed, I'll set up the backend. To start I'll install express, create a folder called **_backend_** and create a file inside called `server.js`. I'll also be installing a program called [`nodemon`](https://www.npmjs.com/package/nodemon) so that while testing my backend I don't have to restart the server on every change.
 
 ```bash
 npm install express
@@ -33,7 +33,7 @@ npm install express
 npm install nodemon --save-dev
 ```
 
-When we install nodemon we save it as a **_developer dependency_**. If we check our package.json file we'll notice nodemon is listed under devDependencies. devDependecies are only need by our project during development unlike normal dependencies which are needed by our application in production. Here's my [repo](https://github.com/buddafucofibas/devdiaries_II/tree/1435bd513a8c56b0557e71dbfad3006ae88bb786) at this point.
+When we install nodemon we save it as a **_developer dependency_**. If we check our package.json file we'll notice nodemon is listed under devDependencies. devDependecies are only needed by our application during development unlike normal dependencies which are always needed by our application. Here's my [repo](https://github.com/buddafucofibas/devdiaries_II/tree/1435bd513a8c56b0557e71dbfad3006ae88bb786) at this point.
 
 ---
 
@@ -56,15 +56,15 @@ app.listen(PORT, () => {
 })
 ```
 
-First we import express which returns a function, we then call this function returning the `app` object which contains a variety of methods that we will be using to build our backend.
+First we import `express` which returns a function, we then call this function returning the `app` object which contains a variety of methods that we will be using to build our backend.
 
-The first method we use, `app.get()`, takes as a parameter a route and a callback function. The `/` route is the home route, and we respond to this home route with a simple JSON object that has a greeting message.
+The first method we use, `app.get()`, takes as a parameter a route path and a callback function. `/` is our home route, and we respond to this with a simple JSON object that has a greeting message.
 
-The next method sets up the server to listen for requests on port 3000. My optional callback function prints a message to the console with the address to our site so I can zip right to it.
+The next method sets up the server to listen for requests on port `PORT` which we set to `8080` earlier. It has an optional callback function that prints a message to the console with the address to our site so we can zip right to it.
 
 ## RESTful routing
 
-Next we'll be writing the routes using the **RESTful** routing pattern. RESTful routing refers to the matching of **CRUD** functionality (create, read, update and detroy) to corresponding **HTTP verbs** (POST, GET, PUT/PATCH, DELETE) and readable urls (e.g. /post/new or post/id/edit).
+Next we will be writing the routes using the **RESTful** routing pattern. RESTful routing refers to the matching of **CRUD** functionality (create, read, update and detroy) to corresponding **HTTP verbs** (POST, GET, PUT/PATCH, DELETE) and readable route paths (e.g. /post/new or post/id/edit).
 
 RESTful Routes:
 
@@ -78,7 +78,7 @@ RESTful Routes:
 | Update     |   /resources/:id    |    PATCH/PUT    |        Update specific resource        |
 | Destroy    |   /resources/:id    |     DELETE      |        Delete specific resource        |
 
-This is what the beginning routes will look like for our posts. Also note the last route which serves as a catch all. The server will try to match the url to our routes by order of placement in our server file. If it cannot match the url to any of our routes, then it will caught by our final `app.use` method and a `404` (page not found) message will be displayed.
+Below are our routes. Also note the last route which serves as a catch all. The server will try to match the url to our routes by order of placement in our server file. If it cannot match the url to any of our routes, then it will be caught by our final `app.use` method and a `404` (page not found) message will be displayed.
 
 ```js
 // Home Page
@@ -119,7 +119,7 @@ app.use((req, res) => {
 })
 ```
 
-I think traditionally, people wait until a little later to start refactoring code to clean things up, but I'm going to be proactive and start now. What I'm going to do is put as little code in my `server.js` file as possible. To this end, we'll be moving the routes elsewhere. Specifically a folder aptly name `/routes`. Inside this folder we'll create a file named `postRouter.js`.
+I think traditionally, people wait until a little later to start refactoring code to clean things up, but I'm going to be proactive and start now. What I'm going to do is put as little code in my `server.js` file as possible. To this end, we'll be moving the routes elsewhere. Specifically a folder aptly name `routes`. Inside this folder we'll create a file named `postRouter.js`.
 
 ```js
 // /routes/postRouter.js
@@ -169,7 +169,7 @@ app.use('/posts', postsRouter)
 // ...
 ```
 
-`app.use()` is a function that provides middleware to be used under certain conditions. Without a _path_ parameter provided, the middleware is mounted when the app starts. When we provide a path, in this instance `/posts`, the `postsRouter` middleware is called to handle the request. That's why in `postsRouter.js` `/posts` is missing from the route paths. When the `postsRouter` middleware gets called, the path extension will be `/posts` so repeating it in the `postsRouter` file would mean we're expecting the path `~/posts/posts`.
+`app.use()` is a function that provides middleware to be used under certain conditions. Without a _path_ parameter provided, the middleware is mounted when the app starts. When we provide a path, in this instance `/posts`, the `postsRouter` middleware is called to handle requests sent to paths beginning with `/posts`. That's why in `postsRouter.js` `/posts` is missing from the route paths. When the `postsRouter` middleware gets called, the path extension will be `/posts` so repeating it in the `postsRouter` file would mean we're expecting the path `~/posts/posts`.
 
 The other big resource our app will be working with is the author resource. So we'll create a new file in our routes folder, call it `authorsRouter.js` and recreate what we did above in this file but we'll call this router when we get a request for the path `/authors`. In the end our `authorsRouter.js` file will look like this:
 
