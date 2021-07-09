@@ -1,5 +1,5 @@
 ---
-slug: day-one
+slug: 01_day-one
 title: Day One
 description: Hello, world.
 date: '2021-06-18'

@@ -1,5 +1,5 @@
 ---
-slug: developer-blog-I
+slug: 02_devBlog-BE-I
 title: Developer Blog - Backend Routes
 description: RESTful routing
 date: '2021-06-28'

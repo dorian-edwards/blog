@@ -40,7 +40,7 @@ const PostIndex = ({ data }) => {
 export default PostIndex
 
 export async function getStaticProps() {
-  const siteData = await import('../../config.json')
+  // const siteData = await import('../../config.json')
   const fs = require('fs')
 
   const files = fs.readdirSync(`${process.cwd()}/content`, 'utf-8')
