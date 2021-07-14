@@ -51,6 +51,23 @@
   margin-bottom: 10px;
 }
 
+.blog_body img {
+  display: block;
+  width: 95%;
+  /* max-width: 500px; */
+  margin: auto;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+
+.blog_body img[alt='Successful connection'] {
+  display: block;
+  max-width: 400px;
+  margin: auto;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+
 .blog_body img[alt='folder-structure'] {
   display: block;
   width: 300px;
