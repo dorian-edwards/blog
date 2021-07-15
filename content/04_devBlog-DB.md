@@ -29,7 +29,7 @@ You also need to create a _Database User_, the first of which will have administ
 
 ![Database access screen](/assets/images/04.png)
 
-On the next screen select _Connect your application_. It will prompt you for your driver (Node.js) and version (3.7 or later at the time of this post). It will the give you a string that looks like `mongodb+srv://<username>:<password>@cluster0.ajy1j.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`, except you'll use the database username and password you set up earlier. This string can be accessed later by selecting _Connect_ from the _Deployment_ screen.
+On the next screen select _Connect your application_. It will prompt you for your driver (Node.js) and version (3.7 or later at the time of this post). It will the give you a string that starts with like `mongodb+srv://<username>:<password>@cluster0.ajy1j...`, except you'll use the database username and password you set up earlier. This string can be accessed later by selecting _Connect_ from the _Deployment_ screen.
 
 ![Application connection string  ](/assets/images/05.png)
 
