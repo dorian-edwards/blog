@@ -1,0 +1,89 @@
+.project_card {
+  background: rgb(247, 247, 247);
+  background: linear-gradient(
+    90deg,
+    rgba(247, 247, 247, 0.75) 0%,
+    rgba(69, 162, 158, 1) 35%,
+    rgba(31, 40, 51, 1) 100%
+  );
+  max-width: 800px;
+  /* min-width: 430px; */
+  padding: 10px;
+  display: flex;
+  border-radius: 2px;
+  margin-top: 15px;
+}
+
+.img_wrapper {
+  /* background: black; */
+  min-width: 320px;
+  height: 300px;
+  margin-right: 5px;
+  border-radius: 2px;
+  position: relative;
+  justify-content: space-between;
+}
+
+.description {
+  font-size: 16px;
+  padding: 0 5px;
+  overflow-y: scroll;
+  letter-spacing: 3px;
+  max-height: 300px;
+}
+
+.description div {
+  margin: 5px 0;
+}
+
+.desk img {
+  width: 90%;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.mobile img {
+  width: 25%;
+  position: absolute;
+  top: 25px;
+  right: 5px;
+}
+
+.desk img,
+.mobile img {
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 720px) {
+  .project_card {
+    flex-direction: column;
+  }
+
+  .img_wrapper {
+    width: 95%;
+    max-width: 450px;
+    align-self: center;
+  }
+
+  .mobile img {
+    bottom: 30px;
+    right: 0;
+  }
+
+  .description {
+    min-width: 320px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .img_wrapper {
+    min-width: 300px;
+    max-height: 250px;
+  }
+
+  .mobile img {
+    top: 15px;
+  }
+}
