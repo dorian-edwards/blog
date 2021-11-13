@@ -8,21 +8,21 @@ import {
   consoleBlogMobile,
   blogDesc,
   bloghref,
-} from './projects/console.blog'
+} from '../projects/console.blog'
 
 import {
   googleDesktop,
   googleMobile,
   googleDesc,
   googlehref,
-} from './projects/google'
+} from '../projects/google'
 
 import {
   etchDesk,
   etchMobile,
   etchDesc,
   etchhref,
-} from './projects/etch-a-sketch'
+} from '../projects/etch-a-sketch'
 
 const Index = () => {
   return (
