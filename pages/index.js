@@ -3,24 +3,55 @@ import Link from 'next/link'
 import Layout from '../components/layout'
 import Project from '../components/project'
 
+import {
+  consoleBlogDesktop,
+  consoleBlogMobile,
+  blogDesc,
+  bloghref,
+} from './projects/console.blog'
+
+import {
+  googleDesktop,
+  googleMobile,
+  googleDesc,
+  googlehref,
+} from './projects/google'
+
+import {
+  etchDesk,
+  etchMobile,
+  etchDesc,
+  etchhref,
+} from './projects/etch-a-sketch'
+
 const Index = () => {
-  const consoleBlogDesktop = {
-    src: '/assets/images/BlogDesk.png',
-    alt: 'web app screenshot desktop view',
-  }
-
-  const consoleBlogMobile = {
-    src: '/assets/images/BlogMobile.png',
-    alt: 'web app screenshot mobile view',
-  }
-
   return (
     <Layout>
-      <h1>Projects</h1>
+      <h1>
+        <a
+          href='https://github.com/buddafucofibas?tab=repositories'
+          target='__blank'
+        >
+          Projects
+        </a>
+      </h1>
       <Project
         desktop={consoleBlogDesktop}
         mobile={consoleBlogMobile}
-        href='https://console-dot-blog.herokuapp.com'
+        desc={blogDesc}
+        href={bloghref}
+      />
+      <Project
+        desktop={googleDesktop}
+        mobile={googleMobile}
+        desc={googleDesc}
+        href={googlehref}
+      />
+      <Project
+        desktop={etchDesk}
+        mobile={etchMobile}
+        desc={etchDesc}
+        href={etchhref}
       />
     </Layout>
   )
