@@ -29,12 +29,23 @@
   text-align: right;
 }
 
-.blog_wrapper p {
+.blog_wrapper p:not(blockquote p) {
   margin: 10px 0 15px 0;
   font-size: 1.5rem;
   font-weight: 300;
   color: #d6d7d8;
   letter-spacing: 2px;
+}
+
+.blog_wrapper blockquote p {
+  position: relative;
+  font-size: 14px;
+  padding: 4px 10px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(102, 252, 241, 0.5);
+  border-left-width: 5px;
+  background-color: rgba(102, 252, 241, 0.1);
+  font-weight: 100;
 }
 
 .blog_wrapper pre {
