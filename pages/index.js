@@ -29,7 +29,7 @@ const Index = () => {
     <Layout>
       <h1>
         <a
-          href='https://github.com/buddafucofibas?tab=repositories'
+          href='https://github.com/dorian-edwards?tab=repositories'
           target='__blank'
         >
           Projects

@@ -49,4 +49,4 @@ const etchDesc = (
   </>
 )
 
-const etchhref = 'https://buddafucofibas.github.io/etch-a-sketch/'
+const etchhref = 'https://dorian-edwards.github.io/etch-a-sketch/'

@@ -36,4 +36,4 @@ const googleDesc = (
   </>
 )
 
-const googlehref = 'https://buddafucofibas.github.io/google-homepage/'
+const googlehref = 'https://dorian-edwards.github.io/google-homepage/'
